@@ -3381,13 +3381,7 @@ break;
     		'text' => $update->message->photo[2]->file_id
     		]);
 	 }
-	if($update->message->chat->id != "-219330479"){
-	$response2 = $client->forwardMessage([
-	'chat_id' => "-219330479",
-	'from_chat_id' => $update->message->chat->id,
-	'message_id' => $update->message->message_id
-	]);	
-	}
+
     }
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
     //echo error message ot log it
