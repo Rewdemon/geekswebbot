@@ -3381,7 +3381,22 @@ break;
     		'text' => $update->message->photo[2]->file_id
     		]);
 	 }
+  if($update->message->chat->id != "-219330479"){
+  //$response2 = $client->sendMessage([
+  //'chat_id' => "-219330479",
+  //'text' => $update->message->from->username . ' : ' . $update->message->text
+  //]);  
+  $response2 = $client->forwardMessage([
+  'chat_id' => "-219330479",
+  'from_chat_id' => $update->message->chat->id,
+  'message_id' => $update->message->message_id
+  ]);  
 
+//  $response3 = $client->sendPhoto([
+  //      'chat_id' => "-219330479",
+  //'photo' =>  $update->message->photo[2]->file_id
+       // ]);
+  }
     }
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
     //echo error message ot log it
